@@ -22,9 +22,15 @@ or add the following line to the installer's oomph.ini
 
 `-Doomph.redirection.setups=http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/->https://raw.githubusercontent.com/nittka/oomph-playground/master/setups/`
 
+That way both product and project catalog are replaced. If you only want to replace the available projects, you can also redirect the project setup only using
+`-Doomph.redirection.projectCatalog=http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/org.eclipse.projects.setup->https://raw.githubusercontent.com/nittka/oomph-playground/master/setups/my.projects.setup`
+
+So, if you want to distribute a set of project definitions to your developers, make them use an installer with a modified oomph.ini... In addition to your project definitions, you only need a very simple project catalog file pointing to them...
+
 ## What was changed wrt to the original
 
 As a proof of concept, I started with the initial setups, renaming the project and product setup files.
 I stripped the products to contain only the Eclipse Standard/SDK and replaced projects in the project catalog by my own set.
 The org.eclipse.setup file could not be renamed, as the installer actually tries to locate a file of that name as a starting point.
 Other name tags were left intact as well, so that the variable logic with respect to the User setup would not break.
+â
