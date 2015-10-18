@@ -22,10 +22,9 @@ or add the following line to the installer's oomph.ini
 
 `-Doomph.redirection.setups=http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/->https://raw.githubusercontent.com/nittka/oomph-playground/master/setups/`
 
-That way both product and project catalog are replaced. Replacing the project catalog only seems not to be less simple. Running the installer with the following parameter looks good at first
-`-Doomph.redirection.projectCatalog=http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/org.eclipse.projects.setup->https://raw.githubusercontent.com/nittka/oomph-playground/master/setups/my.projects.setup`
-but unfortunately, it does not work. You will notice that project setups pointed to relative to the project catalog are not resolved correctly.
-The others will not be installed as the eclipse installation created by the installer is missing the redirecting start parameter, so the project setup to be installed will not be found, once the base installation is materialized.
+That way both product and project catalog are replaced.
+
+The common prefix `http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/` may be abbreviated by `index:/`
 
 ## What was changed wrt to the original
 
@@ -33,4 +32,11 @@ As a proof of concept, I started with the initial setups, renaming the project a
 I stripped the products to contain only the Eclipse Standard/SDK and replaced projects in the project catalog by my own set.
 The org.eclipse.setup file could not be renamed, as the installer actually tries to locate a file of that name as a starting point.
 Other name tags were left intact as well, so that the variable logic with respect to the User setup would not break.
-�
+
+## Redirecting the project catalog only
+Replacing the project catalog only seems not to be less simple. Running the installer with the following parameter looks good at first
+`-Doomph.redirection.projectCatalog=http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/org.eclipse.projects.setup->https://raw.githubusercontent.com/nittka/oomph-playground/master/setups/my.projects.setup`
+but unfortunately, it does not work. You will notice that project setups pointed to relative to the project catalog are not resolved correctly.
+The others will not be installed as the eclipse installation created by the installer is missing the redirecting start parameter, so the project setup to be installed will not be found, once the base installation is materialized.
+
+See the projectCatalogRedirection branch for an attempt to overcome these problems.
