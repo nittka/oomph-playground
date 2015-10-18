@@ -344,7 +344,7 @@
   <setupTask
       xsi:type="setup:EclipseIniTask"
       option="-Doomph.redirection.setupDir"
-      value="=index:/setups/->https://raw.githubusercontent.com/nittka/oomph-playground/projectCatalogRedirection/setups/setups"
+      value="=index:/setups/->https://raw.githubusercontent.com/nittka/oomph-playground/projectCatalogRedirection/setups/setups/"
       vm="true">
     <description></description>
   </setupTask>
