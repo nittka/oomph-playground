@@ -338,10 +338,14 @@
     <project href="https://raw.githubusercontent.com/AKSW/Xturtle/develop/xturtleDev.setup#/"/>
     <project href="https://raw.githubusercontent.com/nittka/terminology/master/terminologyDev.setup#/"/>
   </project>
-  <project name="Container2" label="Xtext Runtimes">
-    <project href="setups/xtextRuntime243.setup#/"/>
-    <project href="setups/xtextRuntime27.setup#/"/>
+  <project name="Container2"
+      label="Oomph Playground Projects">
+    <project
+        href="setups/emptyProject.setup#/"/>
+    <project
+        href="https://raw.githubusercontent.com/nittka/oomph-playground/master/setups/setups/xtextSDKRun.setup#/"/>
+    <project
+        href="setups/xtextTools.setup#/"/>
   </project>
-      
   <description>Alle Projekte, die bei einer Umleitung auf Alex-Projekte angezeigt werden sollen</description>
 </setup:ProjectCatalog>
