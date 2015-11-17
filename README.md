@@ -21,6 +21,8 @@ Add the following lines to the installer's eclipse-inst.ini
 
 The first line redirects the Eclipse project catalog to another catalog (note that the GitHub catalog is still in place because the original index itself is still used). The second redirection makes sure that files located relative to my.projects.setup are still found. These two redirections are also part of the project catalog itself.
 
-In order to keep things simple, I recommend using only absolute URIs in the catalog. In that case you only need to redirect the catalog itself. It also prevents problems caused by two catalogs using the same subdirectory names for relative URIs.
+## Recommendations for shipping your own project catalog
 
-There is a pending enhancement request for introducing a placeholder catalog to the index shipped with Oomph. Having that you can keep both Eclipse and GitHub catalog and simply add your own project catalog rather than replacing one of the defaults.
+* Keep things simple and use only absolute URIs in your catalog. In this case you only need to redirect the catalog itself. It also prevents problems caused by two catalogs using the same subdirectory names for relative URIs.
+* Make use of the redirectable catalogs recently introduced to the Oomph index. `redirectable.projects.setup` for your own project catalog (and `redirectable.products.setup` for your own product catalog) are empty place holder setups that you can redirect in the way described above without disabling any of the other hosted catalogs.
+* Do not forget to add the EclipseIniTask (catalog redirection) to your catalog.
