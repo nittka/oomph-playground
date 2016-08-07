@@ -112,6 +112,29 @@
     </setupTask>
     <description></description>
   </stream>
+  <stream name="xtextsdk29"
+      label="Xtext SDK 2.9">
+    <setupTask
+        xsi:type="setup.p2:P2Task"
+        id="Xtext SDK 2.9 feature">
+      <requirement
+          name="org.eclipse.xtext.sdk.feature.group"
+          versionRange="[2.9.0,2.10.0)"/>
+    </setupTask>
+    <description></description>
+  </stream>
+  <stream name="xtextsdk210"
+      label="Xtext SDK 2.10">
+    <setupTask
+        xsi:type="setup.p2:P2Task"
+        id="Xtext SDK 2.10 feature">
+      <requirement
+          name="org.eclipse.xtext.sdk.feature.group"
+          versionRange="[2.10.0,2.11.0)"/>
+      <description></description>
+    </setupTask>
+    <description></description>
+  </stream>
   <stream name="xtextruntime28"
       label="Xtext Runtime 2.8">
     <setupTask
@@ -120,6 +143,31 @@
       <requirement
           name="org.eclipse.xtext.redist.feature.group"
           versionRange="[2.8.0,2.9.0)"/>
+    </setupTask>
+    <description></description>
+  </stream>
+  <stream name="xtextruntime29"
+      label="Xtext Runtime 2.9">
+    <setupTask
+        xsi:type="setup.p2:P2Task"
+        id="Xtext Redistributable 2.9 feature"
+        label="">
+      <requirement
+          name="org.eclipse.xtext.redist.feature.group"
+          versionRange="[2.9.0,2.10.0)"/>
+    </setupTask>
+    <description></description>
+  </stream>
+  <stream name="xtextruntime210"
+      label="Xtext Runtime 2.10">
+    <setupTask
+        xsi:type="setup.p2:P2Task"
+        id="Xtext Redistributable 2.10 feature"
+        label="">
+      <requirement
+          name="org.eclipse.xtext.redist.feature.group"
+          versionRange="[2.10.0,2.11.0)"/>
+      <description></description>
     </setupTask>
     <description></description>
   </stream>
