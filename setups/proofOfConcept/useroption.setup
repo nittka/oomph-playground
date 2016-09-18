@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<setup:Project
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:setup="http://www.eclipse.org/oomph/setup/1.0"
+    name="userOptionExample"
+    label="Example for user option">
+  <setupTask
+      xsi:type="setup:VariableTask"
+      type="BOOLEAN"
+      name="useroption.create.resource.option"
+      value=""
+      defaultValue="false"
+      storageURI="scope://Installation"
+      label="Create Resource:"/>
+  <setupTask
+      xsi:type="setup:EclipseIniTask"
+      id=""
+      option="-Duseroption.create.resource"
+      value="=${useroption.create.resource.option}"
+      vm="true">
+    <description></description>
+  </setupTask>
+  <setupTask
+      xsi:type="setup:ResourceCreationTask"
+      excludedTriggers="BOOTSTRAP"
+      filter="(useroption.create.resource=true)"
+      content="This resource was created you checked the variable&#xA;which caused the vm option to be set to true&#xA;which caused the filter of the resource creation task to match."
+      targetURL="${workspace.location|uri}/test.txt"
+      encoding="UTF-8">
+    <description>This task is executed depending on the user's choice on the variable page.</description>
+  </setupTask>
+  <stream name="master"
+      label="master">
+    <description>master</description>
+  </stream>
+  <description>This setup illustrates a conditional setup task execution based on a user option (boolean choice on variable page).</description>
+</setup:Project>
