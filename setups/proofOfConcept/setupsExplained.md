@@ -7,3 +7,5 @@ The technical solution are filters that activate tasks. These filter can test sy
 It is important that the filtered task must not run in the bootstrap phase as the correct value from the eclipse.ini is not available during that phase.
 
 In our example setup we chose scope://Installation as Storage URI for the variable declaration. This should cause the variable not to be stored in the user setup, so the user should be asked for the option everytime a new instance of the project is to be installed. If the user should be asked only once (as the answer is expected to be the same every time), just use the default scope://.
+
+Make sure that `value` in the `VariableTask` is not present (this is not the same as value being an empty string)! Otherwise, the value is assumed to be known and the user will not be asked on the Variables page. Checking this is best done by opening the model as text (this can also be done from the Setup editor's context menu -> Open in Text Editor).

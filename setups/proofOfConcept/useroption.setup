@@ -10,7 +10,6 @@
       xsi:type="setup:VariableTask"
       type="BOOLEAN"
       name="useroption.create.resource.option"
-      value=""
       defaultValue="false"
       storageURI="scope://Installation"
       label="Create Resource:"/>
