@@ -21,6 +21,9 @@
       <requirement
           name="org.eclipse.xtext.sdk.feature.group"
           versionRange="[2.4.0,2.5.0)"/>
+      <requirement
+          name="org.eclipse.emf.mwe2.launcher.feature.group"
+          versionRange="[2.4.0,2.5.0)"/>
     </setupTask>
     <description></description>
   </stream>
