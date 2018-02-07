@@ -91,6 +91,9 @@
       <requirement
           name="org.eclipse.xtext.sdk.feature.group"
           versionRange="[2.7.0,2.8.0)"/>
+      <requirement
+          name="org.eclipse.emf.mwe2.launcher.feature.group"
+          versionRange="[2.7.0,2.8.0)"/>
     </setupTask>
     <description></description>
   </stream>
@@ -112,6 +115,9 @@
         id="Xtext_SDK_2.8_feature">
       <requirement
           name="org.eclipse.xtext.sdk.feature.group"
+          versionRange="[2.8.0,2.9.0)"/>
+      <requirement
+          name="org.eclipse.emf.mwe2.launcher.feature.group"
           versionRange="[2.8.0,2.9.0)"/>
     </setupTask>
     <description></description>
